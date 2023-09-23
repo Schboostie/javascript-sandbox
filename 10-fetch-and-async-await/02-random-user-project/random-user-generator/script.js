@@ -1,6 +1,6 @@
 function fetchUser() {
   showSpinner();
-  fetch('https://randomuser.me/api')
+  fetch("https://randomuser.me/api")
     .then((res) => res.json())
     .then((data) => {
       hideSpinner();
@@ -9,12 +9,12 @@ function fetchUser() {
 }
 
 function displayUser(user) {
-  const userDisplay = document.querySelector('#user');
+  const userDisplay = document.querySelector("#user");
 
-  if (user.gender === 'female') {
-    document.body.style.backgroundColor = 'rebeccapurple';
+  if (user.gender === "female") {
+    document.body.style.backgroundColor = "rebeccapurple";
   } else {
-    document.body.style.backgroundColor = 'steelblue';
+    document.body.style.backgroundColor = "steelblue";
   }
 
   userDisplay.innerHTML = `
@@ -45,13 +45,13 @@ function displayUser(user) {
 }
 
 function showSpinner() {
-  document.querySelector('.spinner').style.display = 'block';
+  document.querySelector(".spinner").style.display = "block";
 }
 
 function hideSpinner() {
-  document.querySelector('.spinner').style.display = 'none';
+  document.querySelector(".spinner").style.display = "none";
 }
 
-document.querySelector('#generate').addEventListener('click', fetchUser);
+document.querySelector("#generate").addEventListener("click", fetchUser);
 
 fetchUser();
